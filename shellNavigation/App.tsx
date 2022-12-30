@@ -1,17 +1,45 @@
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {Text, View} from 'react-native';
+import AboutPage from './Src/Pages/AboutPage';
+import DetailsPage from './Src/Pages/DetailsPage';
+import HomePage from './Src/Pages/HomePage';
+import ProfilePage from './Src/Pages/ProfilePage';
+import SettingsPage from './Src/Pages/SettingsPage';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#ffffff',
-      }}>
-      <Text style={{color: '#000000', fontSize: 32}}>Helooo</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomePage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Details"
+          component={DetailsPage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={ProfilePage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Settings"
+          component={SettingsPage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="About"
+          component={AboutPage}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
