@@ -5,6 +5,7 @@ import AboutPage from './Src/Pages/AboutPage';
 import DetailsPage from './Src/Pages/DetailsPage';
 import HomePage from './Src/Pages/HomePage';
 import ProfilePage from './Src/Pages/ProfilePage';
+
 import SettingsPage from './Src/Pages/SettingsPage';
 
 const Stack = createNativeStackNavigator();
