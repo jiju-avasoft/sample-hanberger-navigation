@@ -3,6 +3,7 @@ import {
   Animated,
   Dimensions,
   Image,
+  Platform,
   Pressable,
   StyleProp,
   StyleSheet,
@@ -67,6 +68,7 @@ const HomePage: React.FC<HomePageProps> = props => {
           style={[
             {
               flexDirection: 'row',
+              marginTop: Platform.OS === 'ios' ? 38 : 0,
               zIndex: 1,
               width: '100%',
               paddingHorizontal: 10,
@@ -140,7 +142,7 @@ const HomePage: React.FC<HomePageProps> = props => {
               marginTop: 20,
             }}
             onPress={() => {
-              props.navigation.navigate('Details', { user});
+              props.navigation.navigate('Details', {user});
             }}>
             <Text
               style={{
@@ -159,16 +161,16 @@ const HomePage: React.FC<HomePageProps> = props => {
         <View
           style={{
             height: Height,
+            paddingTop: Platform.OS === 'ios' ? 38 : 0,
             width: Width,
             position: 'absolute',
             zIndex: 2,
-            backgroundColor: 'rgba(0,0,0,0.5)',
           }}>
           <Pressable
             onPress={() => {
               setVisible(false);
             }}
-            style={{flex: 1, zIndex: 2}}>
+            style={{flex: 1, zIndex: 2, backgroundColor: 'rgba(0,0,0,0.3)'}}>
             <ShellNavigationMenu
               style={{flex: 1, zIndex: 5}}
               navigation={props.navigation}
